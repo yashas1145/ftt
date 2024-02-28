@@ -1,0 +1,35 @@
+<%- include('partials/header.ejs') %>
+
+    <h1>Family travel tracker</h1>
+
+    <a href="/addUser">Add user</a>
+
+    <h3>List of users:</h3>
+
+    <% if (locals.users) { %>
+        <ul>
+            <% for (let i in users) { %>
+                <li style="color: <%= users[i].usercolor%>;">
+                    <a href="/state/user/<%= users[i].userid %>"><%= users[i].username %></a>
+                    <a href="/user/<%= users[i].userid %>/state">Add a state</a>
+                </li>
+            <% } %>
+        </ul>
+    <% } else { %>
+        No users are present
+    <% } %>
+
+    <% if (locals.states && locals.states.length > 0) { %>
+        <h3>States visited by <%= userName %></h3>
+        <ul>
+            <% for (let i in states) { %>
+                <li>
+                    <%= states[i].statename %>, <%= states[i].statecode %>
+                </li>
+            <% } %>
+        </ul>
+    <% } else { %>
+        <h3>Click on a user to display their visited states</h3>
+    <% } %>
+
+<%- include('partials/footer.ejs') %>

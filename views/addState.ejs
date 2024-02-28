@@ -1,0 +1,14 @@
+<%- include('partials/header.ejs') %>
+
+    <h3>Add a new state</h3>
+
+    <form action="/state" method="post">
+        <label for="stateName">State name </label>
+        <input type="text" name="stateName" id="stateName">
+        <label for="stateCode">State code </label>
+        <input type="text" name="stateCode" id="stateCode">
+        <input type="hidden" name="userId" id="userId" value=<%= userId %>>
+        <input type="submit" value="Add state">
+    </form>
+
+<%- include('partials/footer.ejs') %>

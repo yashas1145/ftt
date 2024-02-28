@@ -1,0 +1,13 @@
+<%- include('partials/header.ejs') %>
+
+    <h3>Add a new user</h3>
+
+    <form action="/user" method="post">
+        <label for="userName">User name </label>
+        <input type="text" name="userName" id="userName">
+        <label for="userColor">User color </label>
+        <input type="text" name="userColor" id="userColor">
+        <input type="submit" value="Add user">
+    </form>
+
+<%- include('partials/footer.ejs') %>
